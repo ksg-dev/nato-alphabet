@@ -31,8 +31,14 @@ print(nato_dict)
 # print(nato)
 
 # TODO 2. Create a list of the phonetic code words from a word that the user inputs.
-word = input("Enter a word: ").upper()
-
-letters = [nato_dict[letter] for letter in word]
-print(letters)
+# adding error handling to input
+while True:
+    word = input("Enter a word: ").upper()
+    try:
+        letters = [nato_dict[letter] for letter in word]
+    except KeyError:
+        print("Sorry, only letters of the alphabet please.")
+    else:
+        print(letters)
+        break
 
